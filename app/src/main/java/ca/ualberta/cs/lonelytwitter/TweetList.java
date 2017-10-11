@@ -45,8 +45,12 @@ public class TweetList {
 
     //check if a list of tweets has the specifed tweet if it doesnt reutrn true else false
     public boolean hasTweet(Tweet tweet) {
+        if(tweets.size()==0){
+            return Boolean.FALSE;
+        }
+
         for (int i = 0; i < tweets.size(); i++) {
-            if (tweet.getDate().equals(tweets.get(i).getDate())&&tweet.getMessage().equals(tweets.get(i).getMessage()) ) {
+            if (tweets.get(i).getDate().equals(tweet.getDate())&&tweets.get(i).getMessage().equals(tweet.getMessage()) ) {
                 return Boolean.TRUE;
             }
 
